@@ -1,123 +1,174 @@
-# Tech Hardware — Loja de Componentes de Hardware
+# Tech Hardware 🖥️
 
-> **Status:** Projeto demonstrativo, em desenvolvimento constante. Foi concebido com **auxílio de IA** (ver nota ao final).
+<p>
+  <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" width="40" height="40">
+  &nbsp;
+  <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS" width="40" height="40">
+  &nbsp;
+  <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" width="40" height="40">
+</p>
 
-## Apresentação
+Loja virtual responsiva de componentes de hardware, com catálogo interativo, carrinho persistente e checkout em etapas.
 
-O Tech Hardware é uma loja virtual **single-page** de componentes de hardware (processadores, placas de vídeo, memórias RAM, SSDs, placas-mãe, fontes e gabinetes). O objetivo do projeto é praticar **desenvolvimento web front-end puro** — HTML, CSS e JavaScript — cobrindo desde a vitrine de produtos até um checkout completo em etapas, tudo sem frameworks e sem servidor de dados.
+Projeto de portfólio de **Beatriz Fernandes**, estudante de Engenharia de Software.
 
-É um projeto **front-end de demonstração**: todo o "negócio" (produtos, frete, pagamento, pedidos) é simulado no navegador. Nenhuma compra real acontece.
+> Projeto demonstrativo: pagamentos, fretes e pedidos são simulados. Nenhuma compra ou cobrança real é realizada.
 
-## Objetivos de estudo
+## Sobre o projeto
 
-- Construir a UI de uma loja com **HTML semântico** e **CSS moderno** (variáveis, Grid/Flexbox, design responsivo).
-- Organizar a lógica em **JavaScript vanilla** com separação clara de responsabilidades (dados, loja/catálogo, carrinho, checkout).
-- Implementar um **fluxo de checkout multi-etapas** com validação de formulário, máscaras, integração com API externa (ViaCEP), persistência local (`localStorage`) e simulação de pagamento.
+O Tech Hardware reúne a experiência de navegação e compra de uma loja de componentes de computador em uma única página.
 
-## Tecnologias realmente utilizadas
+O catálogo inclui processadores, placas de vídeo, memórias RAM, SSDs, placas-mãe, fontes e gabinetes. O usuário pode pesquisar produtos, filtrar categorias, montar seu carrinho e percorrer um checkout com validações e consulta de endereço pelo CEP.
 
-| Tecnologia | Uso |
+A aplicação utiliza HTML, CSS e JavaScript puro, sem frameworks, backend ou banco de dados.
+
+## Tecnologias
+
+| Tecnologia | Aplicação no projeto |
 |---|---|
-| **HTML5** | Estrutura da página (semantic tags, `header`, `main`, `footer`, `aside`, `dialog` via div com `role="dialog"`) |
-| **CSS3** | Layout com **Grid** e **Flexbox**, **Custom Properties** (`:root`), **Media Queries**, animações (`@keyframes`) |
-| **JavaScript (vanilla ES6+)** | Lógica de catálogo, carrinho e checkout. Funções `const`/`let`, arrow functions, template literals, **IIFE**, `Intl.NumberFormat`, `localStorage`, `CustomEvent`, `fetch` + `async/await` |
-| **Font Awesome 6** (CDN) | Ícones do site |
-| **Google Fonts — Inter** (CDN) | Tipografia |
-| **ViaCEP API** | Preenchimento automático de endereço a partir do CEP (consulta HTTP externa) |
+| **HTML5** | Estrutura da página, formulários e conteúdo |
+| **CSS** | Estilização, variáveis, Grid, Flexbox, animações e responsividade |
+| **JavaScript ES6+** | Catálogo, busca, filtros, carrinho, validações e checkout |
+| **localStorage** | Persistência do carrinho no navegador |
+| **Fetch API** | Requisições para consulta de CEP |
+| **ViaCEP** | Consulta de endereço a partir do CEP |
+| **Font Awesome 6** | Ícones da interface |
+| **Google Fonts — Inter** | Tipografia |
 
-**Não** são utilizados: frameworks/bibliotecas JS (React, Vue, JQuery), pré-processadores CSS, bundlers, build tools, backend ou banco de dados.
+## Funcionalidades
 
-## Funcionalidades implementadas
+### Catálogo
 
-### Vitrine
-- Listagem de **24 produtos** em **7 categorias** (processadores, placas de vídeo, memória RAM, SSDs, placas-mãe, fontes e gabinetes).
-- **Filtro por categoria** (abas/pills no topo).
-- **Busca em tempo real** (por nome, categoria e especificações).
-- **Ordenação**: relevância, menor preço, maior preço, nome (A–Z).
-- Card de produto com preço, preço antigo riscado, selo ("Promo", "Vendido", "Top"), especificações e botão "Adicionar ao carrinho".
-- Contagem de resultados exibida ("X de Y itens").
+- Exibição de 24 produtos distribuídos em 7 categorias.
+- Filtro por categoria.
+- Busca em tempo real por nome, categoria e especificações.
+- Ordenação por relevância, menor preço, maior preço e nome.
+- Cards com preços, especificações e selos.
+- Contagem dos resultados encontrados.
 
 ### Carrinho
-- **Sidebar lateral** com itens, controle de **quantidade** (+/-), **remover item** e **limpar carrinho**.
-- Badge com a quantidade total no ícone do carrinho.
-- **Preview** dos 3 últimos itens ao passar o mouse sobre o carrinho.
-- **Persistência em `localStorage`**: o carrinho sobrevive ao fechar/reabrir a página.
-- **Subtotal** calculado automaticamente (soma de `preço × quantidade`).
 
-### Checkout (5 etapas + confirmação)
-1. **Dados do cliente** — nome, e-mail e telefone (com máscara).
-2. **Endereço** — CEP (máscara + **busca no ViaCEP**) e campos de endereço.
-3. **Entrega** — 3 opções simuladas de frete/prazo; **frete grátis automático para subtotal ≥ R$ 500**.
-4. **Pagamento** — simulação de **Pix** ou **Cartão** (sem pedir dados reais).
-5. **Revisão** — resumo de produtos, cliente, endereço, entrega, pagamento e totais (subtotal + frete = total).
-6. **Confirmação** — gera um **número de pedido demonstrativo** (`TH-YYYYMMDD-XXXXX`), exibe resumo e avisa que nada foi cobrado.
+- Painel lateral com os produtos selecionados.
+- Controles para aumentar e diminuir quantidades.
+- Remoção individual de produtos e limpeza do carrinho.
+- Indicador da quantidade total de itens.
+- Prévia dos últimos três itens ao passar o mouse sobre o carrinho.
+- Cálculo automático do subtotal.
+- Persistência dos itens ao recarregar ou reabrir a página.
 
-### Extra
-- Newsletter (formulário simulado, não envia e-mail).
-- Rodapé com links institucionais (placeholders).
-- Design **responsivo** (desktop, tablet e celular).
-- **Toasts** de feedback (adicionado ao carrinho, erros, checkout bloqueado etc.).
+### Checkout
 
-## Como executar localmente
+O processo é organizado em cinco etapas, seguidas da confirmação:
 
-Pré-requisito: apenas um navegador moderno. Os scripts são locais e não precisam de instalação.
+1. **Dados do cliente:** nome, e-mail e telefone com máscara.
+2. **Endereço:** CEP com consulta ao ViaCEP e preenchimento manual disponível.
+3. **Entrega:** escolha entre três opções de frete e prazo simulados.
+4. **Pagamento:** seleção de Pix ou cartão, sem solicitar dados reais de cartão.
+5. **Revisão:** conferência dos produtos, dados informados e valores.
+6. **Confirmação:** apresentação de um número demonstrativo de pedido e seu resumo.
 
-**Opção A — abrir direto (mais simples):**
-1. Entre na pasta `hardware-store`.
-2. Dê dois cliques em `index.html`.
+O fluxo também inclui:
 
-**Opção B — servidor local (recomendado):**
+- Validação dos campos obrigatórios.
+- Mensagens de erro próximas aos campos.
+- Máscaras de telefone e CEP.
+- Preservação dos dados ao retornar às etapas anteriores.
+- Bloqueio da finalização com carrinho vazio.
+- Frete gratuito para subtotal igual ou superior a R$ 500.
+- Atualização do total conforme a entrega selecionada.
+- Limpeza do carrinho somente após a confirmação.
+
+### Interface
+
+- Layout responsivo para diferentes tamanhos de tela.
+- Notificações de feedback para ações e erros.
+- Formulário demonstrativo de newsletter.
+- Rodapé com informações institucionais fictícias.
+
+## Como executar
+
+### Abrindo diretamente no navegador
+
+1. Baixe este repositório e extraia os arquivos.
+2. Abra a pasta do projeto.
+3. Abra o arquivo `index.html` no navegador.
+
+Não é necessário instalar dependências para essa opção.
+
+### Usando um servidor local
+
+Com Git e Python instalados, execute:
+
 ```bash
-cd hardware-store
+git clone https://github.com/anabfernandess/tech-hardware.git
+cd tech-hardware
 python -m http.server 8080
 ```
-Acesse `http://localhost:8080`.
 
-Alternativas equivalentes: extensão "Live Server" do VS Code, ou `npx serve .`.
+Depois, acesse:
 
-> Observações de execução:
-> - Ícones (Font Awesome) e a fonte Inter vêm de CDNs: sem internet eles não carregam, mas o site não quebra (fica sem ícones/fonte customizada).
-> - A busca de endereço usa a API pública **ViaCEP**, que exige internet (se falhar, os campos podem ser preenchidos manualmente — o site já trata isso).
+http://localhost:8080
 
-## Estrutura de pastas e arquivos
+Também é possível abrir a pasta no VS Code e utilizar a extensão **Live Server**.
 
-```
-hardware-store/
-├── index.html        # Estrutura da página (vitrine, carrinho, modal de checkout)
-├── css/
-│   └── styles.css    # Todo o CSS: tema, componentes, checkout e responsividade
-├── js/
-│   ├── products.js   # DADOS: array com os 24 produtos (nome, preço, categoria, specs...)
-│   ├── script.js     # Catálogo + carrinho + vitrine (busca, filtro, ordenação, sidebar)
-│   └── checkout.js   # Checkout em etapas (formulário, validação, ViaCEP, revisão, confirmação)
-├── README.md         # Este arquivo
-└── DOCUMENTACAO.md   # Documentação técnica didática (para estudo/portfólio)
-```
+> A consulta ao ViaCEP, os ícones e a fonte externa dependem de internet. Se a consulta de CEP falhar, o endereço pode ser preenchido manualmente.
 
-## O que funciona de verdade e o que é simulado
+## Estrutura do projeto
 
-### Funciona de verdade (no navegador)
-- **Catálogo**: filtro, busca, ordenação e renderização dos cards.
-- **Carrinho**: adicionar/remover/alterar quantidades, subtotal, badge e preview.
-- **Persistência**: o carrinho é salvo em `localStorage` do navegador (chave `techhardware_cart`).
-- **Validações de formulário** e máscaras (CEP e telefone).
-- **Frete grátis**: a regra de subtotal ≥ R$ 500 é calculada de verdade (aplica frete R$ 0).
-- **Cálculos totais**: subtotal + frete = total, recalculados em tempo real.
-- **Máscara de telefone e CEP**, bloqueio de checkout com carrinho vazio, preservação de dados ao voltar etapas, limpeza do carrinho **somente após** a confirmação.
-- **Conexão real com o ViaCEP** para preencher o endereço (requer internet).
+| Arquivo | Responsabilidade |
+|---|---|
+| `index.html` | Estrutura da vitrine, carrinho e checkout |
+| `css/styles.css` | Tema visual, componentes e responsividade |
+| `js/products.js` | Dados e especificações dos produtos |
+| `js/script.js` | Catálogo, pesquisa, filtros, ordenação e carrinho |
+| `js/checkout.js` | Etapas do checkout, validações, ViaCEP e confirmação |
+| `README.md` | Apresentação e instruções de execução |
+| `DOCUMENTACAO.md` | Documentação técnica e roteiro de estudo |
 
-### Simulado (apenas visual/demonstrativo)
-- **Pagamento**: Pix (QR Code e "código copia e cola" são **fictícios**) e cartão de crédito (parcelas **não são cobradas**). Nenhum dado bancário é enviado.
-- **Frete**: valores (R$ 24,90 / R$ 39,90 / R$ 69,90) e prazos (7–10, 3–5, 1–2 dias úteis) são **taxas e datas fixas inventadas**, não consultas a transportadoras.
-- **Registro de pedidos**: o "pedido" existe apenas na tela de confirmação. Não há banco de dados nem envio para nenhum serviço; o número gerado é ilustrativo.
-- **Desconto "à vista no Pix · X% off"** nos cards: é **apenas informativo** (percentual calculado sobre o preço antigo). Ele **não** altera o subtotal nem o total do pedido.
-- **Newsletter**: o clique apenas limpa o campo e mostra um toast. Nenhum e-mail é armazenado ou enviado.
-- **Informações da empresa**: telefone, e-mail, CNPJ, endereço e redes sociais do rodapé são **fictícios** (dados de demonstração).
+## Armazenamento e integrações
 
-## Nota sobre desenvolvimento com auxílio de IA
+O carrinho é salvo no `localStorage` do navegador, utilizando a chave `techhardware_cart`.
 
-Este projeto foi construído em parceria com um **assistente de IA** (este ambiente de desenvolvimento): a geração das páginas, a refatoração do carrinho, o implementação do checkout e os testes automatizados foram realizados com apoio da IA, sob revisão e direcionamento humano da autora/estudante. O código foi revisado e validado por testes automatizados executados durante o desenvolvimento. A documentação deste repositório também foi redigida com apoio de IA, baseada exclusivamente no código real do projeto.
+A aplicação consulta o ViaCEP para buscar o endereço correspondente ao CEP informado. Se o serviço estiver indisponível ou o CEP não for encontrado, o preenchimento manual permanece disponível.
 
-## Autor
+Não há backend ou banco de dados para registrar pedidos. A confirmação apresentada ao usuário faz parte da demonstração.
 
-Projeto de estudo de **Engenharia de Software** — parte de portfólio. Nenhum conteúdo é produção real.
+## Limites da demonstração
+
+| Recurso | Comportamento |
+|---|---|
+| **Pagamento** | Pix, QR Code, código copia e cola e parcelamento são fictícios. Nenhuma cobrança é realizada. |
+| **Entrega** | Os valores e prazos são predefinidos, sem integração com transportadoras. |
+| **Frete grátis** | A regra de subtotal ≥ R$ 500 é aplicada aos cálculos da demonstração. |
+| **Pedido** | O número gerado é ilustrativo. Não há envio para um sistema de vendas. |
+| **Desconto nos cards** | O percentual exibido é informativo, calculado sobre o preço antigo. Não gera um desconto adicional no checkout. |
+| **Newsletter** | Exibe feedback na interface, sem cadastrar ou enviar e-mails. |
+| **Dados institucionais** | Contatos, endereço, CNPJ e links do rodapé são demonstrativos. |
+
+## Aprendizado
+
+O projeto serve como base de estudo para:
+
+- Estruturação de interfaces com HTML.
+- Layouts responsivos com CSS Grid e Flexbox.
+- Manipulação do DOM e eventos em JavaScript.
+- Organização de dados e separação de responsabilidades.
+- Persistência local com `localStorage`.
+- Consumo de APIs com `fetch` e `async/await`.
+- Validação de formulários e navegação entre etapas.
+- Testes de interação e experiência de uso.
+
+## Documentação técnica
+
+Consulte a [documentação do projeto](./DOCUMENTACAO.md) para entender o funcionamento dos arquivos, as regras do carrinho e checkout, os testes registrados e os pontos de personalização.
+
+## Autora
+
+**Beatriz Fernandes**  
+Estudante de Engenharia de Software.
+
+Responsável pela definição dos requisitos, direcionamento do desenvolvimento e testes manuais de navegação, responsividade e checkout.
+
+Projeto desenvolvido com apoio de ferramentas de IA.
+
+[Meu GitHub](https://github.com/anabfernandess)
