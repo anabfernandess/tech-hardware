@@ -12,6 +12,12 @@ Loja virtual responsiva de componentes de hardware, com catálogo interativo, ca
 
 Projeto de portfólio de **Beatriz Fernandes**, estudante de Engenharia de Software.
 
+## 🌐 Acesse o site
+
+**[Clique aqui para conhecer o Tech Hardware](https://anabfernandess.github.io/tech-hardware/)**
+
+A aplicação está publicada no GitHub Pages e pode ser acessada pelo computador, tablet ou celular.
+
 > Projeto demonstrativo: pagamentos, fretes e pedidos são simulados. Nenhuma compra ou cobrança real é realizada.
 
 ## Sobre o projeto
@@ -34,6 +40,7 @@ A aplicação utiliza HTML, CSS e JavaScript puro, sem frameworks, backend ou ba
 | **ViaCEP** | Consulta de endereço a partir do CEP |
 | **Font Awesome 6** | Ícones da interface |
 | **Google Fonts — Inter** | Tipografia |
+| **GitHub Pages** | Hospedagem do site |
 
 ## Funcionalidades
 
@@ -85,7 +92,11 @@ O fluxo também inclui:
 - Formulário demonstrativo de newsletter.
 - Rodapé com informações institucionais fictícias.
 
-## Como executar
+## Como executar localmente
+
+Para conhecer a aplicação sem instalar nada, acesse o [site publicado](https://anabfernandess.github.io/tech-hardware/).
+
+Para explorar o código no seu computador, utilize uma das opções abaixo.
 
 ### Abrindo diretamente no navegador
 
@@ -157,6 +168,7 @@ O projeto serve como base de estudo para:
 - Consumo de APIs com `fetch` e `async/await`.
 - Validação de formulários e navegação entre etapas.
 - Testes de interação e experiência de uso.
+- Versionamento com Git e publicação no GitHub Pages.
 
 ## Documentação técnica
 
@@ -171,4 +183,4 @@ Responsável pela definição dos requisitos, direcionamento do desenvolvimento 
 
 Projeto desenvolvido com apoio de ferramentas de IA.
 
-[Meu GitHub](https://github.com/anabfernandess)
+[Meu GitHub](https://github.com/anabfernandess) · [Acesse o projeto](https://anabfernandess.github.io/tech-hardware/)
