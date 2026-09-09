@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechHardware - Loja online de componentes de hardware: processadores, placas de vídeo, memórias e muito mais." />
+  <title>TechHardware | Componentes para o seu PC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-microchip"></i>
+        Tech<span>Hardware</span>
+      </a>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar produtos..." autocomplete="off" />
+        <button id="searchBtn" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <div class="cart-btn-container">
+          <button class="cart-btn" id="cartBtn" aria-label="Abrir carrinho">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" id="cartCount">0</span>
+          </button>
+          <div class="cart-preview" id="cartPreview"></div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="categories-bar">
+      <div class="container nav-inner">
+        <button class="cat-pill active" data-category="all">Todos</button>
+        <button class="cat-pill" data-category="processadores">Processadores</button>
+        <button class="cat-pill" data-category="placas-de-video">Placas de Vídeo</button>
+        <button class="cat-pill" data-category="memoria-ram">Memória RAM</button>
+        <button class="cat-pill" data-category="ssd">SSDs</button>
+        <button class="cat-pill" data-category="placas-mae">Placas-mãe</button>
+        <button class="cat-pill" data-category="fontes">Fontes</button>
+        <button class="cat-pill" data-category="gabinetes">Gabinetes</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <span class="hero-tag"><i class="fa-solid fa-bolt"></i> Frete grátis acima de R$ 500</span>
+          <h1>Monte sua máquina dos <span>sonhos</span></h1>
+          <p>Os melhores componentes de hardware com garantia, entrega rápida e preço justo. Da CPU ao gabinete.</p>
+          <div class="hero-btns">
+            <a href="#loja" class="btn btn-primary">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#vantagens" class="btn btn-ghost">Nossas vantagens</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="vantagens">
+      <div class="features">
+        <div class="feature">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h3>Garantia estendida</h3>
+            <p>Até 12 meses em todos os produtos.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div>
+            <h3>Entrega rápida</h3>
+            <p>Enviamos em até 24h úteis.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-rotate-left"></i>
+          <div>
+            <h3>Devolução fácil</h3>
+            <p>7 dias para troca sem burocracia.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <h3>Suporte especializado</h3>
+            <p>Time técnico para tirar dúvidas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container store" id="loja">
+      <div class="section-head">
+        <div>
+          <h2>Nossos produtos</h2>
+          <p id="resultsInfo">Todos os itens</p>
+        </div>
+        <div class="sort-box">
+          <label for="sortSelect">Ordenar por</label>
+          <select id="sortSelect">
+            <option value="default">Relevância</option>
+            <option value="price-asc">Menor preço</option>
+            <option value="price-desc">Maior preço</option>
+            <option value="name-asc">Nome (A–Z)</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <p class="empty-state" id="emptyState" style="display:none;">
+        <i class="fa-solid fa-box-open"></i>
+        Nenhum produto encontrado.
+      </p>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div>
+          <h2>Fique por dentro das promoções</h2>
+          <p>Cadastre seu e-mail e receba ofertas exclusivas no lançamento de novos componentes.</p>
+        </div>
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" required placeholder="Seu melhor e-mail" />
+          <button type="submit" class="btn btn-primary">Assinar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-microchip"></i>
+          Tech<span>Hardware</span>
+        </a>
+        <p>Loja online especializada em componentes de hardware para gamers e profissionais.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <a href="#">Sobre nós</a>
+        <a href="#">Termos de uso</a>
+        <a href="#">Política de privacidade</a>
+        <a href="#">Trocas e devoluções</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ajuda</h4>
+        <a href="#">Central de ajuda</a>
+        <a href="#">Rastrear pedido</a>
+        <a href="#">Formas de pagamento</a>
+        <a href="#">Fale conosco</a>
+      </div>
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <p><i class="fa-solid fa-phone"></i> (11) 4002-8922</p>
+        <p><i class="fa-solid fa-envelope"></i> contato@techhardware.com.br</p>
+        <p><i class="fa-solid fa-location-dot"></i> São Paulo, SP</p>
+        <p class="footer-pay">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+          <i class="fa-brands fa-pix"></i>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        &copy; 2026 TechHardware. CNPJ 00.000.000/0001-00. Site demonstrativo.
+      </div>
+    </div>
+  </footer>
+
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Carrinho de compras">
+    <div class="cart-header">
+      <h2><i class="fa-solid fa-cart-shopping"></i> Seu carrinho</h2>
+      <button id="closeCart" aria-label="Fechar carrinho"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Finalizar compra</button>
+      <button class="btn btn-ghost btn-block" id="clearCartBtn">Limpar carrinho</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="checkout-overlay" id="checkoutOverlay" aria-hidden="true">
+    <div class="checkout-modal" role="dialog" aria-modal="true" aria-label="Finalizar compra">
+      <div class="checkout-header">
+        <div class="checkout-title">
+          <h2><i class="fa-solid fa-bag-shopping"></i> Finalizar compra</h2>
+          <span class="checkout-note"><i class="fa-solid fa-flask"></i> Checkout demonstrativo — nenhuma cobrança real</span>
+        </div>
+        <button class="checkout-close" id="checkoutCloseBtn" aria-label="Fechar checkout"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <ol class="checkout-progress" id="checkoutProgress"></ol>
+      <div class="checkout-body" id="checkoutBody"></div>
+      <div class="checkout-footer" id="checkoutFooter"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
